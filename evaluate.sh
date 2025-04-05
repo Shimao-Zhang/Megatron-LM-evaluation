@@ -2,6 +2,8 @@
 export CUDA_DEVICE_MAX_CONNECTIONS=1
 # alias python='/root/.local/lib/python3.12'
 
+export NCCL_TIMEOUT=99999
+
 TOKENIZER_ARGS=(
     --tokenizer-model /mnt/blob-hptrainingwesteurope-pretraining/Llama-3-8B
     # --tokenizer-model /mnt/mydata/klyang/GK4V16-Q6144-C4096-M10B-lr5e-5-B16M-Phiv2-1016-retry4-90k
