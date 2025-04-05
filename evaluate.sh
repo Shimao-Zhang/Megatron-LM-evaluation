@@ -16,14 +16,14 @@ MODEL_ARGS=(
     --no-load-rng
     --bf16
     --tensor-model-parallel-size 1
-    --load /mnt/shimao-zhang-blob/multi-mix/pretraining/llama_3B_multilingual_mix_enzh200_0327
+    --load /mnt/shimao-zhang-blob/multi-mix/pretraining/llama_3B_multilingual_mix_enzh150_0325/merged_model
 )
 
 INFERENCE_SPECIFIC_ARGS=(
     --attention-dropout 0.0
     --hidden-dropout 0.0
     --micro-batch-size 3
-    --results-path /mnt/shimao-zhang-blob/multi-mix/evaluation_results/llama_3B_multilingual_mix_enzh200_0327.json
+    --results-path /mnt/shimao-zhang-blob/multi-mix/evaluation_results/llama_3B_multilingual_mix_enzh150_0325.json
     --task-list hellaswag,openbookqa,winogrande,arc_easy,arc_challenge,boolq,piqa,sciq,logiqa,lambada
     # --task-list gsm8k,mmlu_pro_math
     # --task-list mmlu_continuation
