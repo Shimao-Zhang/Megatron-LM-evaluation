@@ -4,9 +4,9 @@ export CUDA_DEVICE_MAX_CONNECTIONS=1
 
 export NCCL_TIMEOUT=99999
 
+
 TOKENIZER_ARGS=(
-    --tokenizer-model /mnt/blob-hptrainingwesteurope-pretraining/Llama-3-8B
-    # --tokenizer-model /mnt/mydata/klyang/GK4V16-Q6144-C4096-M10B-lr5e-5-B16M-Phiv2-1016-retry4-90k
+    --tokenizer-model /mnt/shimao-zhang-blob/models/Llama-3.1-8B
     --tokenizer-type HuggingFaceTokenizer
 )
 
@@ -16,23 +16,19 @@ MODEL_ARGS=(
     --no-load-rng
     --bf16
     --tensor-model-parallel-size 1
-    --load /mnt/blob-hptrainingwesteurope-pretraining/tuning_result/llama_3B_data_evaluation_nemotron_ML_0403_tp1_core/
-    # --load /mnt/blob-hptrainingwesteurope-pretraining/tuning_results/llama_3B_data_evaluation_nemotron_HQ_0303_tp1_core/
-    # --load /mnt/mydata/klyang/olmo2_replicate_0207_format_torch_tp1_core
+    --load /mnt/blob-openpai-xiaoliuinterns/shimao_zhang/ckpts_from_others/llama_3B_data_evaluation_dclm_0215_tp1_core
 )
 
 INFERENCE_SPECIFIC_ARGS=(
     --attention-dropout 0.0
     --hidden-dropout 0.0
-    --micro-batch-size 1
-    # --results-path /mnt/pvc-blob-nfs/klyang/regmix_results/2.json
-    --results-path /mnt/blob-hptrainingwesteurope-pretraining-out/evaluation_results/llama_3B_data_evaluation_nemotron_ML_0403_tp1_core_other.json
+    --micro-batch-size 3
+    --results-path /mnt/shimao-zhang-blob/multi-mix/evaluation_results/llama_3B_en100_0215.json
     --task-list hellaswag,openbookqa,winogrande,arc_easy,arc_challenge,boolq,piqa,sciq,logiqa,lambada
-    # --task-list boolq
     # --task-list gsm8k,mmlu_pro_math
-    # --task-list minerva_math
-    # --task-list math_continuation
     # --task-list mmlu_continuation
+    # --task-list math_continuation
+    # --task-list mmlu_continuation,mmlu
     --num-fewshot 0
     --trust-remote-code
 )
@@ -42,12 +38,12 @@ INFERENCE_SPECIFIC_ARGS=(
 #     ${MODEL_ARGS[@]} \
 #     ${INFERENCE_SPECIFIC_ARGS[@]}
 
-# /home/aiscuser/.local/bin/accelerate launch evaluate.py \
+#  /root/.local/bin/accelerate launch evaluate.py \
 #     ${TOKENIZER_ARGS[@]} \
 #     ${MODEL_ARGS[@]} \
 #     ${INFERENCE_SPECIFIC_ARGS[@]}
 
-accelerate launch --main_process_port 29502 evaluate.py \
+accelerate launch --main_process_port 29500 evaluate.py \
     ${TOKENIZER_ARGS[@]} \
     ${MODEL_ARGS[@]} \
     ${INFERENCE_SPECIFIC_ARGS[@]}
