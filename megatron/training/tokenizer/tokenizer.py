@@ -20,7 +20,8 @@ from megatron.training.tokenizer.multimodal_tokenizer import MultimodalTokenizer
 def build_tokenizer(args, **kwargs):
     """Initialize tokenizer."""
 
-    args.tokenizer_model = "/mnt/shimao-zhang-blob/models/Llama-3.1-8B"
+    # args.tokenizer_model = "/mnt/shimao-zhang-blob/models/Llama-3.1-8B"
+    args.tokenizer_model = "/mnt/blob-hptrainingwesteurope-pretraining/Llama-3-8B"
     if args.rank == 0:
         print('> building {} tokenizer ...'.format(args.tokenizer_type), flush=True)
 

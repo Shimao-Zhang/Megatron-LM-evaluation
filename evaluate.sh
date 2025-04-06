@@ -6,7 +6,8 @@ export NCCL_TIMEOUT=99999
 
 
 TOKENIZER_ARGS=(
-    --tokenizer-model /mnt/shimao-zhang-blob/models/Llama-3.1-8B
+    # --tokenizer-model /mnt/shimao-zhang-blob/models/Llama-3.1-8B
+    --tokenizer-model /mnt/blob-hptrainingwesteurope-pretraining/Llama-3-8B
     --tokenizer-type HuggingFaceTokenizer
 )
 
