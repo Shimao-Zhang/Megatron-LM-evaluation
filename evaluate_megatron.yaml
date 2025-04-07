@@ -60,6 +60,7 @@ taskRoles:
       - pip install deepspeed
       - pip install h5py
       - pip install wandb
+      - pip install hf_xet
       - pip install lm_eval
       - echo "[Used Envs]"
       - pip list
