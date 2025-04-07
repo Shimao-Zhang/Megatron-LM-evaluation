@@ -1,5 +1,5 @@
 protocolVersion: 2
-name: evaluate_test
+name: evaluate_test_
 type: job
 jobRetryCount: 0
 prerequisites:
@@ -35,9 +35,25 @@ taskRoles:
       - export NCCL_TOPO_FILE=/opt/microsoft/ndv4-topo.xml
       - export NCCL_DEBUG=WARN
       - nvidia-smi
+      - echo "Install blobfuse..."
+      - >-
+        wget
+        https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb
+      - dpkg -i packages-microsoft-prod.deb
+      - apt -y update
+      - apt --fix-broken install -y
+      - apt -y upgrade
+      - apt-get -y update
+      - apt-get -y upgrade --fix-missing
+      - apt-get -y install libfuse3-dev fuse3 --fix-missing
+      - apt-get -y install blobfuse2 --fix-missing
       - echo "Download code"
-      - git clone https://github.com/SteveKGYang/Megatron-LM.git
-      - cd Megatron-LM
+      - cd /mnt
+      - pwd
+      - >-
+        git clone --branch main
+        https://github.com/Shimao-Zhang/Megatron-LM-eval.git
+      - cd Megatron-LM-eval
       - ls -alh .
       - echo "Prepare other envs"
       - pip install transformers
@@ -54,7 +70,9 @@ taskRoles:
       - export NUM_NODES=$PAI_TASK_ROLE_TASK_COUNT_worker
       - export NODE_RANK=$PAI_CURRENT_TASK_ROLE_CURRENT_TASK_INDEX
       - 'export LD_LIBRARY_PATH=/opt/hpcx/ucx/lib:$LD_LIBRARY_PATH'
-      # - echo "Copy data"
+      - echo "Add shimao-zhang-blob"
+      - python /mnt/Megatron-LM-eval/manual_mount_zhangsm.py
+      - echo "Copy data"
       - mkdir /scratch/
       - mkdir /scratch/torch_model
       - chmod 777 /scratch/torch_model
@@ -70,6 +88,7 @@ taskRoles:
       # - chmod 777 /scratch/starcoder
       # - mkdir /scratch/pes2o
       # - chmod 777 /scratch/pes2o
+      
       - bash evaluate.sh
 defaults:
   virtualCluster: default
@@ -84,9 +103,9 @@ extras:
     - plugin: teamwise_storage
       parameters:
         storageConfigNames:
-          - pvc-blob-nfs
+          - blob-openpai-xiaoliuinterns
+          - blob-openpai-xiaoliuinterns-out
   hivedScheduler:
-    jobPriorityClass: prod
     taskRoles:
       worker:
         skuNum: 8
