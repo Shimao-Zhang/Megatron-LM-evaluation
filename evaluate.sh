@@ -2,7 +2,7 @@
 export CUDA_DEVICE_MAX_CONNECTIONS=1
 # alias python='/root/.local/lib/python3.12'
 
-export NCCL_TIMEOUT=99999
+export NCCL_TIMEOUT=99999999
 
 
 TOKENIZER_ARGS=(
