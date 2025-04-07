@@ -13,7 +13,7 @@ azstorage:
     endpoint: https://xiaoliuinterns.blob.core.windows.net   
     container: shimao-zhang
     mode: sas
-    sas: "?sv=2023-01-03&st=2025-04-01T16%3A24%3A00Z&se=2025-04-08T16%3A24%3A00Z&skoid=1e03e99f-c28e-4247-bf4d-046e2f6d7e57&sktid=72f988bf-86f1-41af-91ab-2d7cd011db47&skt=2025-04-01T16%3A24%3A00Z&ske=2025-04-08T16%3A24%3A00Z&sks=b&skv=2023-01-03&sr=c&sp=racwdxltf&sig=Z1A14lvnNg0ICOVbS468RKKDLUnJM31A9UIzFEzKeKw%3D"
+    sas: "?sv=2023-01-03&st=2025-04-07T19%3A00%3A00Z&se=2025-04-14T19%3A00%3A00Z&skoid=1e03e99f-c28e-4247-bf4d-046e2f6d7e57&sktid=72f988bf-86f1-41af-91ab-2d7cd011db47&skt=2025-04-07T19%3A00%3A00Z&ske=2025-04-14T19%3A00%3A00Z&sks=b&skv=2023-01-03&sr=c&sp=racwdxltf&sig=WcGrzSvirV5r%2BwFfVLmFrCf3zxQ34mJstsGAYESU2Mg%3D"
     update-md5: false
     validate-md5: false
     virtual-directory: true
