@@ -17,19 +17,19 @@ MODEL_ARGS=(
     --no-load-rng
     --bf16
     --tensor-model-parallel-size 1
-    --load /mnt/blob-openpai-xiaoliuinterns/shimao_zhang/ckpts_from_others/llama_3B_data_evaluation_dclm_0215_tp1_core/
+    --load /mnt/shimao-zhang-blob/multi-mix/pretraining/llama_3B_multilingual_mix_enzh200_0322/merged_model
 )
 
 INFERENCE_SPECIFIC_ARGS=(
     --attention-dropout 0.0
     --hidden-dropout 0.0
     --micro-batch-size 3
-    --results-path /mnt/shimao-zhang-blob/multi-mix/evaluation_results/mmlu_llama_3B_en100_0215.json
+    --results-path /mnt/shimao-zhang-blob/multi-mix/evaluation_results/zhtest_llama_3B_multilingual_mix_enzh200_0322.json
     # --task-list hellaswag,openbookqa,winogrande,arc_easy,arc_challenge,boolq,piqa,sciq,logiqa,lambada
     # --task-list gsm8k,mmlu_pro_math
     # --task-list math_continuation
-    --task-list mmlu_continuation,mmlu
-    # --task-list cmmlu
+    # --task-list mmlu_continuation,mmlu
+    --task-list cmmlu
     --num-fewshot 5
     --trust-remote-code
 )
