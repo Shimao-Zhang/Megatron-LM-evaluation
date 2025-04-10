@@ -30,7 +30,7 @@ INFERENCE_SPECIFIC_ARGS=(
     # --task-list math_continuation
     # --task-list mmlu_continuation,mmlu
     # --task-list cmmlu
-    --task-list ceval
+    --task-list ceval-valid
     # --task-list mmlu_continuation,mmlu
     --num-fewshot 5
     --trust-remote-code
