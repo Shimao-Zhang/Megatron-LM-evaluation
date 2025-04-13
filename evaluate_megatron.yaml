@@ -52,8 +52,8 @@ taskRoles:
       - pwd
       - >-
         git clone --branch main
-        https://github.com/Shimao-Zhang/Megatron-LM-eval.git
-      - cd Megatron-LM-eval
+        https://github.com/Shimao-Zhang/Megatron-LM-evaluation.git
+      - cd Megatron-LM-evaluation
       - ls -alh .
       - echo "Prepare other envs"
       - pip install transformers
@@ -72,7 +72,7 @@ taskRoles:
       - export NODE_RANK=$PAI_CURRENT_TASK_ROLE_CURRENT_TASK_INDEX
       - 'export LD_LIBRARY_PATH=/opt/hpcx/ucx/lib:$LD_LIBRARY_PATH'
       - echo "Add shimao-zhang-blob"
-      - python /mnt/Megatron-LM-eval/manual_mount_zhangsm.py
+      - python /mnt/Megatron-LM-evaluation/manual_mount_zhangsm.py
       - echo "Copy data"
       - mkdir /scratch/
       - mkdir /scratch/torch_model
@@ -106,6 +106,8 @@ extras:
         storageConfigNames:
           - blob-openpai-xiaoliuinterns
           - blob-openpai-xiaoliuinterns-out
+          - blob-hptrainingwesteurope-pretraining
+          - blob-pretraining-hptrainingwestcentralus
   hivedScheduler:
     taskRoles:
       worker:

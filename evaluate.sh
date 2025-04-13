@@ -17,14 +17,16 @@ MODEL_ARGS=(
     --no-load-rng
     --bf16
     --tensor-model-parallel-size 1
-    --load /mnt/shimao-zhang-blob/multi-mix/pretraining/llama_3B_en100_0405/merged_model
+    # --load /mnt/shimao-zhang-blob/multi-mix/pretraining/llama_3B_en100_0405/merged_model
+    --load /mnt/blob-pretraining-hptrainingwestcentralus/pretraining/checkpoints/OpenPAI-Pretrain-17BA3B-RoPE-HQ-0405/hf_iter_196000
 )
 
 INFERENCE_SPECIFIC_ARGS=(
     --attention-dropout 0.0
     --hidden-dropout 0.0
     --micro-batch-size 3
-    --results-path /mnt/shimao-zhang-blob/multi-mix/evaluation_results/ceval_llama_3B_en100_0405.json
+    # --results-path /mnt/shimao-zhang-blob/multi-mix/evaluation_results/ceval_llama_3B_en100_0405.json
+    --results-path /mnt/shimao-zhang-blob/multi-mix/evaluation_results/OpenPAI-Pretrain-17BA3B-RoPE-HQ-0405/hf_iter_196000/ceval.json
     # --task-list hellaswag,openbookqa,winogrande,arc_easy,arc_challenge,boolq,piqa,sciq,logiqa,lambada
     # --task-list gsm8k,mmlu_pro_math
     # --task-list math_continuation
