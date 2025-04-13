@@ -3,7 +3,7 @@ export CUDA_DEVICE_MAX_CONNECTIONS=1
 
 # LOAD_DIR='/mnt/shimao-zhang-blob/multi-mix/pretraining/llama_3B_en100_0405'
 # TARGET_DIR='/mnt/shimao-zhang-blob/multi-mix/pretraining/llama_3B_en100_0405/merged_model'
-LOAD_DIR='/mnt/blob-pretraining-hptrainingwestcentralus/pretraining/checkpoints/OpenPAI-Pretrain-17BA3B-RoPE-HQ-0405/iter_196000'
+LOAD_DIR='/mnt/blob-pretraining-hptrainingwestcentralus/pretraining/checkpoints/OpenPAI-Pretrain-17BA3B-RoPE-HQ-0405'
 TARGET_DIR='/mnt/blob-pretraining-hptrainingwestcentralus/pretraining/checkpoints/OpenPAI-Pretrain-17BA3B-RoPE-HQ-0405/iter_196000_merged'
 
 PATTERN="tokenizer*.json"
