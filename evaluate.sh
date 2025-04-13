@@ -18,7 +18,7 @@ MODEL_ARGS=(
     --bf16
     --tensor-model-parallel-size 1
     # --load /mnt/shimao-zhang-blob/multi-mix/pretraining/llama_3B_en100_0405/merged_model
-    --load /mnt/blob-pretraining-hptrainingwestcentralus/pretraining/checkpoints/OpenPAI-Pretrain-17BA3B-RoPE-HQ-0405/hf_iter_196000
+    --load /mnt/blob-pretraining-hptrainingwestcentralus/pretraining/checkpoints/OpenPAI-Pretrain-17BA3B-RoPE-HQ-0405/hf_iter_196000_merged
 )
 
 INFERENCE_SPECIFIC_ARGS=(
