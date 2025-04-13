@@ -1,4 +1,4 @@
-export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6
+# export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6
 export CUDA_DEVICE_MAX_CONNECTIONS=1
 # alias python='/root/.local/lib/python3.12'
 
@@ -18,7 +18,7 @@ MODEL_ARGS=(
     --bf16
     --tensor-model-parallel-size 7
     # --load /mnt/shimao-zhang-blob/multi-mix/pretraining/llama_3B_en100_0405/merged_model
-    --load /mnt/blob-pretraining-hptrainingwestcentralus/pretraining/checkpoints/OpenPAI-Pretrain-17BA3B-RoPE-HQ-0405/iter_196000
+    --load /mnt/blob-pretraining-hptrainingwestcentralus/pretraining/checkpoints/OpenPAI-Pretrain-17BA3B-RoPE-HQ-0405/iter_196000_merged
 )
 
 INFERENCE_SPECIFIC_ARGS=(
