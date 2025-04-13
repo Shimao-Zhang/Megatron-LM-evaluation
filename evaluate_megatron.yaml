@@ -114,6 +114,6 @@ extras:
         skuNum: 8
         skuType: A100
   jobStatusChangeNotification:
-    running: true
-    succeeded: true
+    running: false
+    succeeded: false
     failed: true
