@@ -94,7 +94,7 @@ taskRoles:
         --model hf
         --model_args pretrained="$HUGGINGFACE_CKPT_PATH",dtype="bfloat16"
         --batch_size 2
-        --num-fewshot 5
+        --num_fewshot 5
         --trust_remote_code
         --tasks ceval-valid
         --output_path "$OUTPUT_PATH/eval"
