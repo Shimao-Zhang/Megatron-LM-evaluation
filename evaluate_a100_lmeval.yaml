@@ -65,6 +65,7 @@ taskRoles:
       - pip install h5py
       - pip install wandb
       - pip install hf_xet
+      - pip install tiktoken
       - pip install lm_eval
       - echo "[Used Envs]"
       - pip list
