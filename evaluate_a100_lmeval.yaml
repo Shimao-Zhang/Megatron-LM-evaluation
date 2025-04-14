@@ -84,7 +84,7 @@ taskRoles:
       
       - export CHECKPOINT_NAME=<% $parameters.checkpoint_name %>
       - export ITERATION_STR=<% $parameters.iteration %>
-      - export HUGGINGFACE_CKPT_PATH="/mnt/blob-pretraining-hptrainingwestcentralus-out/checkpoints/${CHECKPOINT_NAME}/hf_iter_${ITERATION_STR}"
+      - export HUGGINGFACE_CKPT_PATH="/mnt/blob-pretraining-hptrainingwestcentralus/checkpoints/${CHECKPOINT_NAME}/hf_iter_${ITERATION_STR}"
       - export HUGGINGFACE_CKPT_DIRNAME=$(basename $HUGGINGFACE_CKPT_PATH)
       - export OUTPUT_PATH=<% $parameters.output_path %>
       - echo "evaluation..."
