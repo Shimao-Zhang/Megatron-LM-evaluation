@@ -1,8 +1,8 @@
 #!/bin/bash
 export CUDA_DEVICE_MAX_CONNECTIONS=1
 
-LOAD_DIR='/mnt/shimao-zhang-blob/multi-mix/pretraining/llama_3B_zh100_0430'
-TARGET_DIR='/mnt/shimao-zhang-blob/multi-mix/pretraining/llama_3B_zh100_0430/merged'
+LOAD_DIR='/mnt/shimao-zhang-blob/multi-mix/pretraining/llama_3B_zh100_hq_0509'
+TARGET_DIR='/mnt/shimao-zhang-blob/multi-mix/pretraining/llama_3B_zh100_hq_0509/merged'
 # LOAD_DIR='/mnt/blob-pretraining-hptrainingwestcentralus/checkpoints/OpenPAI-Pretrain-17BA3B-RoPE-HQ-0405'
 # TARGET_DIR='/mnt/blob-pretraining-hptrainingwestcentralus/checkpoints/OpenPAI-Pretrain-17BA3B-RoPE-HQ-0405/iter_196000_merged'
 
