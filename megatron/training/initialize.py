@@ -268,6 +268,9 @@ def _initialize_distributed(get_embedding_ranks, get_position_embedding_ranks):
     """Initialize torch.distributed and core model parallel."""
     args = get_args()
 
+    if args.distributed_timeout_minutes < 240:
+        args.distributed_timeout_minutes = 240
+
     device_count = torch.cuda.device_count()
     if torch.distributed.is_initialized():
 
